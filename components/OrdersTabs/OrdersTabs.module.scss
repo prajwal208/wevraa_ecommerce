@@ -1,0 +1,36 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.tabs {
+  display: flex;
+  background: $color-deep-red;
+  padding: 0;
+}
+
+.tab {
+  flex: 1;
+  padding: $space-md;
+  border: none;
+  background: transparent;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+
+  &.active {
+    background: $color-white;
+    color: $color-deep-red;
+    border-bottom: 2px solid $color-deep-red;
+  }
+
+  &:not(.active):hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@include mobile-first($desktop) {
+  .tabs {
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,60 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.wrap {
+  width: 100%;
+  padding: 0 0 $space-md;
+}
+
+.slideWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 420px;
+  background: $color-light-pink;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  padding: $space-md;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: $color-pink;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+
+  &.active {
+    opacity: 1;
+    background: $color-deep-red;
+  }
+}
+
+@include mobile-first($desktop) {
+  .wrap {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg $space-lg;
+  }
+
+  .slideWrap {
+    max-height: 480px;
+    border-radius: 12px;
+  }
+}

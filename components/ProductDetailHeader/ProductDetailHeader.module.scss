@@ -1,0 +1,55 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 0 $space-md;
+  background: $color-white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: $color-black;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background: $color-light-pink;
+  }
+}
+
+@include mobile-first($desktop) {
+  .header {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg;
+  }
+}

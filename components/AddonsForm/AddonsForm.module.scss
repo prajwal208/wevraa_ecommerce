@@ -1,0 +1,190 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.wrap {
+  padding: $space-lg $space-md $space-2xl;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.inner {
+  max-width: 520px;
+  margin: 0 auto;
+  background: $color-white;
+  border-radius: 12px;
+  padding: $space-lg;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.intro {
+  font-size: $font-size-sm;
+  color: $color-text;
+  margin-bottom: $space-lg;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-md 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.label {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-deep-red;
+}
+
+.labelMuted {
+  color: $color-text-muted;
+}
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border: none;
+  border-radius: 14px;
+  background: #ccc;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+
+  &.on {
+    background: $color-deep-red;
+  }
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+
+  .toggle.on & {
+    transform: translateX(20px);
+  }
+}
+
+.segmentWrap {
+  margin-top: $space-sm;
+}
+
+.segment {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid $color-deep-red;
+  width: 100%;
+}
+
+.segmentBtn {
+  flex: 1;
+  padding: $space-sm $space-md;
+  border: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  background: $color-deep-red;
+  color: $color-white;
+
+  &.selected {
+    background: $color-white;
+    color: $color-deep-red;
+  }
+}
+
+.segmentBtnMuted {
+  background: #6b7280;
+  color: $color-white;
+
+  &.selected {
+    background: $color-white;
+    color: $color-text;
+  }
+}
+
+.sectionTitle {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-deep-red;
+  margin: $space-xl 0 $space-xs;
+}
+
+.sectionTitleMuted {
+  color: $color-text;
+}
+
+.subtitle {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin-bottom: $space-md;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-md;
+  margin-bottom: $space-xl;
+}
+
+.uploadCard {
+  min-height: 120px;
+  border-radius: 12px;
+  background: #e0f2f7;
+  border: 2px dashed #99c4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-md;
+}
+
+.uploadCardFilled {
+  border-style: solid;
+}
+
+.uploadPlus {
+  color: $color-deep-red;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.cta {
+  width: 100%;
+  padding: $space-md $space-lg;
+  border: none;
+  background: $color-deep-red;
+  color: $color-white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: $space-md;
+
+  &:hover {
+    background: #6f0f2a;
+  }
+}
+
+@include mobile-first($desktop) {
+  .wrap {
+    padding: $space-2xl $space-lg;
+  }
+
+  .inner {
+    max-width: 600px;
+    padding: $space-xl;
+  }
+}

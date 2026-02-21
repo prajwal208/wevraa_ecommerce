@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.wrap {
+  padding: 0 $space-md $space-xl;
+}
+
+.tabList {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: $space-md;
+}
+
+.tab {
+  padding: $space-sm $space-md $space-sm;
+  border: none;
+  background: transparent;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+
+  &:hover {
+    color: $color-text;
+  }
+
+  &.active {
+    color: $color-text;
+    border-bottom-color: $color-black;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.panel {
+  font-size: $font-size-sm;
+  line-height: 1.6;
+  color: $color-text;
+}
+
+@include mobile-first($desktop) {
+  .wrap {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg $space-2xl;
+  }
+}

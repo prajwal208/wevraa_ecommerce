@@ -1,0 +1,47 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  padding: 0 $space-md $space-lg;
+  background: $color-white;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-md 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.arrow {
+  flex-shrink: 0;
+  color: $color-text-muted;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg $space-xl;
+  }
+}

@@ -1,0 +1,83 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  width: 100%;
+  padding: $space-xl $space-md;
+}
+
+.title {
+  @include section-title-dots;
+  margin-bottom: $space-lg;
+}
+
+.scroll {
+  display: flex;
+  gap: $space-md;
+  overflow-x: auto;
+  padding-bottom: $space-sm;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card {
+  flex-shrink: 0;
+  width: 280px;
+  padding: $space-lg;
+  background: $color-light-pink;
+  border-radius: 12px;
+}
+
+.avatarWrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: $color-pink;
+  margin-bottom: $space-md;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote {
+  font-size: $font-size-sm;
+  color: $color-text;
+  line-height: 1.5;
+  margin-bottom: $space-sm;
+}
+
+.author {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: $space-2xl $space-lg;
+  }
+
+  .scroll {
+    flex-wrap: wrap;
+    overflow: visible;
+    justify-content: center;
+    gap: $space-lg;
+  }
+
+  .card {
+    $gutter: $space-lg * 2 * 0.333;
+    width: calc(33.333% - #{$gutter});
+    min-width: 260px;
+  }
+}

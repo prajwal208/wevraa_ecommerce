@@ -1,0 +1,97 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.footer {
+  background: $color-deep-red;
+  color: $color-white;
+  padding: $space-xl $space-md $space-2xl;
+}
+
+.inner {
+  max-width: $max-content-width;
+  margin: 0 auto;
+}
+
+.shortDesc {
+  font-size: $font-size-sm;
+  line-height: 1.5;
+  margin-bottom: $space-md;
+  opacity: 0.95;
+}
+
+.bullets {
+  margin-bottom: $space-lg;
+  padding-left: $space-md;
+}
+
+.bullet {
+  position: relative;
+  font-size: $font-size-sm;
+  margin-bottom: $space-xs;
+
+  &::before {
+    content: "•";
+    position: absolute;
+    left: -$space-md;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  margin-bottom: $space-xl;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.accordionWrap {
+  margin-bottom: $space-xl;
+}
+
+.longDesc {
+  font-size: $font-size-xs;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.leftCol {
+  margin-bottom: $space-lg;
+}
+
+@include mobile-first($desktop) {
+  .footer {
+    padding: $space-2xl $space-lg;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-2xl;
+    align-items: start;
+    margin-bottom: $space-xl;
+  }
+
+  .leftCol {
+    margin-bottom: 0;
+  }
+
+  .accordionWrap {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,81 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+$measure-blue: #1e3a5f;
+
+.wrap {
+  padding: $space-md;
+  background: $color-white;
+}
+
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  margin-bottom: $space-md;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: $color-white;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-sm $space-md;
+  background: $measure-blue;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.barName {
+  text-transform: capitalize;
+}
+
+.barValue {
+  font-variant-numeric: tabular-nums;
+}
+
+.ruler {
+  padding: $space-md;
+  background: $color-white;
+  min-height: 48px;
+}
+
+.rulerLine {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+}
+
+.tick {
+  width: 1px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tickMajor {
+  height: 12px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@include mobile-first($desktop) {
+  .wrap {
+    max-width: 50%;
+    padding: $space-lg;
+  }
+}

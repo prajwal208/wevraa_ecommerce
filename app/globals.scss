@@ -1,0 +1,63 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+:root {
+  --background: #{$color-white};
+  --foreground: #{$color-text};
+  --color-deep-red: #{$color-deep-red};
+  --color-pink: #{$color-pink};
+  --color-light-pink: #{$color-light-pink};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+// Reserve space for fixed bottom nav on mobile
+.main-with-bottom-nav {
+  padding-bottom: $bottom-nav-height;
+
+  @include mobile-first($desktop) {
+    padding-bottom: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

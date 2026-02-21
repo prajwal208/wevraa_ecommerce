@@ -1,0 +1,79 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  padding: $space-lg $space-md;
+}
+
+.brand {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin-bottom: $space-xs;
+}
+
+.descriptionLabel {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin-bottom: $space-sm;
+}
+
+.price {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin-bottom: $space-md;
+}
+
+.sizeTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: $space-sm;
+  color: $color-text;
+}
+
+.sizeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.sizeBtn {
+  min-width: 48px;
+  height: 44px;
+  padding: 0 $space-md;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  background: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    border-color: $color-deep-red;
+    color: $color-deep-red;
+  }
+
+  &.active {
+    border-color: $color-deep-red;
+    background: $color-deep-red;
+    color: $color-white;
+  }
+}
+
+.measurements {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: $space-xl $space-lg;
+  }
+}

@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  padding: 0 $space-md $space-lg;
+  background: $color-white;
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin-bottom: $space-md;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.chip {
+  padding: $space-sm $space-md;
+  border: 1px solid $color-deep-red;
+  background: $color-white;
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background: $color-light-pink;
+  }
+
+  &.selected {
+    background: $color-deep-red;
+    color: $color-white;
+    border-color: $color-deep-red;
+  }
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg $space-xl;
+  }
+}

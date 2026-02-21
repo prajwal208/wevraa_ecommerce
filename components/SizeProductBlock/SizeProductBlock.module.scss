@@ -1,0 +1,81 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  width: 100%;
+  padding: 0 $space-md $space-xl;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 360px;
+  background: $color-light-pink;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: $space-lg;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sizeTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: $space-sm;
+  color: $color-text;
+}
+
+.sizeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.sizeBtn {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 $space-md;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    border-color: $color-deep-red;
+    color: $color-deep-red;
+  }
+
+  &.active {
+    border-color: $color-deep-red;
+    color: $color-deep-red;
+    background: $color-light-pink;
+  }
+}
+
+.measurements {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg $space-2xl;
+  }
+
+  .imageWrap {
+    max-height: 420px;
+  }
+}

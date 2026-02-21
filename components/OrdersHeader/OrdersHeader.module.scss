@@ -1,0 +1,48 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-md;
+  background: $color-deep-red;
+  min-height: $header-height;
+}
+
+.backBtn {
+  position: absolute;
+  left: $space-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: $color-white;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  margin: 0;
+}
+
+@include mobile-first($desktop) {
+  .header {
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}

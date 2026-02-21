@@ -1,0 +1,55 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  padding: $space-xl $space-md;
+  background: $color-white;
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: $space-lg;
+}
+
+.scroll {
+  display: flex;
+  gap: $space-md;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: $space-sm;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card {
+  flex-shrink: 0;
+  width: 160px;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: $space-2xl $space-lg;
+  }
+
+  .scroll {
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: $space-lg;
+    justify-content: flex-start;
+  }
+
+  .card {
+    $gutter: $space-lg * 3 * 0.25;
+    width: calc(25% - #{$gutter});
+    min-width: 200px;
+  }
+}

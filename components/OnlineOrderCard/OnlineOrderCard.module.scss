@@ -1,0 +1,104 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.card {
+  padding: $space-md;
+  background: $color-white;
+  border-bottom: 1px solid $color-light-pink;
+}
+
+.brand {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0 0 $space-xs;
+}
+
+.desc {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin: 0 0 $space-xs;
+}
+
+.price {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+  margin: 0 0 $space-xs;
+}
+
+.size {
+  font-size: $font-size-sm;
+  color: $color-text;
+  margin: 0 0 $space-md;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.status {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+}
+
+.date {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.trackBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  padding: $space-sm $space-md;
+  border: none;
+  background: #e5e7eb;
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background: #d1d5db;
+  }
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $space-sm;
+}
+
+.ratingLabel {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #d1d5db;
+}
+
+.stars button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@include mobile-first($desktop) {
+  .card {
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}

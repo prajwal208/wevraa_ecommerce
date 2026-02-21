@@ -1,0 +1,68 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $color-white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: $space-md;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 40px;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: $color-text;
+  font-size: $font-size-2xl;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0;
+  line-height: 1;
+
+  &:hover {
+    background: $color-light-pink;
+  }
+}
+
+.shippingNote {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-align: center;
+  margin: $space-sm 0 0;
+  line-height: 1.4;
+}
+
+@include mobile-first($desktop) {
+  .header {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: $space-lg;
+  }
+}

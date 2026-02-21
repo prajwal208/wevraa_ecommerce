@@ -1,0 +1,31 @@
+import Image from "next/image";
+import { dealItems } from "@/data/dummy";
+import styles from "./GoodDeals.module.scss";
+
+export default function GoodDeals() {
+  return (
+    <section className={styles.section} aria-labelledby="good-deals-title">
+      <h2 id="good-deals-title" className={styles.title}>
+        GOOD DEALS
+      </h2>
+      <div className={styles.grid}>
+        {dealItems.map((item) => (
+          <button key={item.id} type="button" className={styles.tile}>
+            {item.image && (
+              <span className={styles.tileImageWrap}>
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  className={styles.tileImage}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </span>
+            )}
+            <span className={styles.tileTitle}>{item.title}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}

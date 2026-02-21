@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+
+.banner {
+  display: block;
+  width: 100%;
+  padding: $space-sm $space-md;
+  background: $gradient-promo;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

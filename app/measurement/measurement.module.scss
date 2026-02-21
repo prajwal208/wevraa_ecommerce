@@ -1,0 +1,38 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.main {
+  min-height: 100vh;
+  background: $color-white;
+  padding-bottom: $bottom-nav-height;
+
+  @include mobile-first($desktop) {
+    padding-bottom: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 56px);
+
+  @include mobile-first($desktop) {
+    flex-direction: row;
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}
+
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+.right {
+  flex-shrink: 0;
+
+  @include mobile-first($desktop) {
+    width: 50%;
+    min-width: 320px;
+  }
+}

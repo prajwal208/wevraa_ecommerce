@@ -1,0 +1,57 @@
+@use "../../styles/variables" as *;
+
+.item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $space-md 0;
+  border: none;
+  background: transparent;
+  color: $color-white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+
+  .open & {
+    transform: rotate(45deg);
+  }
+}
+
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease-out;
+
+  .open & {
+    max-height: 500px;
+    transition: max-height 0.35s ease-in;
+  }
+}
+
+.content {
+  padding: 0 0 $space-md;
+  font-size: $font-size-sm;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}

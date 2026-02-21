@@ -1,0 +1,105 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: $color-light-pink;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkBadge {
+  position: absolute;
+  top: $space-sm;
+  right: $space-sm;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-white;
+  border-radius: 50%;
+  color: #22c55e;
+}
+
+.overlay {
+  padding: $space-md $space-lg;
+  background: $color-deep-red;
+  color: $color-white;
+}
+
+.name {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  margin: 0 0 $space-xs;
+}
+
+.meta {
+  font-size: $font-size-xs;
+  opacity: 0.95;
+  margin-bottom: $space-xs;
+}
+
+.orders {
+  font-size: $font-size-xs;
+  opacity: 0.95;
+  margin-bottom: $space-sm;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #fbbf24;
+}
+
+.ratingNum {
+  margin-left: 4px;
+  font-size: $font-size-xs;
+  color: $color-white;
+  opacity: 0.95;
+}
+
+.reviews {
+  font-size: $font-size-xs;
+  opacity: 0.95;
+}
+
+.viewBtn {
+  margin-top: $space-sm;
+  padding: $space-xs $space-md;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: $color-white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  border-radius: 6px;
+  float: right;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+}

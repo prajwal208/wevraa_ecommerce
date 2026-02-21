@@ -1,0 +1,47 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  width: 100%;
+  padding: 0 $space-md $space-xl;
+}
+
+.full {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  background: $color-light-pink;
+  border-radius: 12px;
+  margin-bottom: $space-md;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  gap: $space-md;
+  margin-bottom: $space-md;
+
+  &.two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.asymmetric {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.block {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: $color-light-pink;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0 $space-lg $space-2xl;
+  }
+}

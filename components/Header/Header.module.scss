@@ -1,0 +1,93 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $color-white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 0 $space-md;
+  gap: $space-md;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: $color-black;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background: $color-light-pink;
+  }
+}
+
+.logo {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+  letter-spacing: 0.02em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: $color-black;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background: $color-light-pink;
+  }
+}
+
+.searchPromoWrap {
+  padding: 0 $space-md $space-md;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.searchWrap {
+  margin-bottom: 0;
+}
+
+@include mobile-first($desktop) {
+  .searchPromoWrap {
+    padding: $space-sm $space-lg $space-md;
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}

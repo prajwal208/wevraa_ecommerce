@@ -1,0 +1,58 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.list {
+  background: $color-white;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  padding: $space-md $space-lg;
+  border-bottom: 1px solid $color-light-pink;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 228, 225, 0.3);
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6b7280;
+  color: $color-white;
+
+  &.yellow {
+    background: #eab308;
+  }
+  &.purple {
+    background: #a855f7;
+  }
+  &.darkPurple {
+    background: #6d28d9;
+  }
+  &.lightGray {
+    background: #d1d5db;
+  }
+}
+
+.name {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+  margin: 0;
+}
+
+@include mobile-first($desktop) {
+  .list {
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}

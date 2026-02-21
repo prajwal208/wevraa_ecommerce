@@ -1,0 +1,80 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  padding: $space-xl $space-md $space-2xl;
+  background: $color-white;
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: $space-md;
+}
+
+.item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $space-md 0;
+  border: none;
+  background: transparent;
+  color: $color-text;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-deep-red;
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+
+  .open & {
+    transform: rotate(180deg);
+  }
+}
+
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease-out;
+
+  .open & {
+    max-height: 500px;
+    transition: max-height 0.35s ease-in;
+  }
+}
+
+.content {
+  padding: 0 0 $space-md;
+  font-size: $font-size-sm;
+  line-height: 1.6;
+  color: $color-text-muted;
+}
+
+@include mobile-first($desktop) {
+  .section {
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: $space-2xl $space-lg;
+  }
+}

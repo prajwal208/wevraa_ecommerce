@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+@mixin mobile-first($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin section-title-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  color: $color-deep-red;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  &::before,
+  &::after {
+    content: "•";
+    color: $color-pink;
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin hide-on-desktop {
+  @include mobile-first($desktop) {
+    display: none !important;
+  }
+}
+
+@mixin show-on-desktop {
+  display: none !important;
+  @include mobile-first($desktop) {
+    display: flex !important;
+  }
+}

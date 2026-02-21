@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.main {
+  min-height: 100vh;
+  background: $color-white;
+  padding-bottom: $bottom-nav-height;
+
+  @include mobile-first($desktop) {
+    padding-bottom: 0;
+  }
+}
+
+.content {
+  padding-bottom: $space-lg;
+}

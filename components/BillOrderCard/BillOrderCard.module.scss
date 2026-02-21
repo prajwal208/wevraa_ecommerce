@@ -1,0 +1,91 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.card {
+  display: flex;
+  gap: $space-md;
+  padding: $space-lg $space-md;
+  background: #faf5f5;
+  border-radius: 12px;
+  margin: $space-md;
+}
+
+.iconWrap {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: #374151;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  flex: 1;
+  min-width: 0;
+}
+
+.boutiqueName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0 0 $space-xs;
+}
+
+.areaName {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin: 0 0 $space-xs;
+}
+
+.deliveredBy {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin: 0 0 $space-xs;
+}
+
+.date {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0 0 0;
+}
+
+.right {
+  text-align: right;
+}
+
+.totalOrders {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin: 0 0 2px;
+}
+
+.totalOrdersNum {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0 0 $space-sm;
+}
+
+.orderValue {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin: 0 0 2px;
+}
+
+.orderValueNum {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0;
+}
+
+@include mobile-first($desktop) {
+  .card {
+    max-width: $max-content-width;
+    margin: $space-md auto;
+  }
+}
