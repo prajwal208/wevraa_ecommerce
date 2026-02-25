@@ -13,6 +13,7 @@ export default function BoutiqueSelectionList({ items }: { items: BoutiqueItem[]
     if (color === "purple") return styles.purple;
     if (color === "darkpurple") return styles.darkPurple;
     if (color === "lightgray") return styles.lightGray;
+    if (color === "orange") return styles.orange;
     return "";
   };
 

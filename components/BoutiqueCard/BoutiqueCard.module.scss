@@ -7,6 +7,11 @@
   overflow: hidden;
   background: $color-light-pink;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+
+  &.selected {
+    border-color: #2563eb;
+  }
 }
 
 .imageWrap {
@@ -36,70 +41,85 @@
   color: #22c55e;
 }
 
-.overlay {
+.info {
   padding: $space-md $space-lg;
-  background: $color-deep-red;
-  color: $color-white;
+  background: $color-light-pink;
+  color: $color-text;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.infoLeft {
+  flex: 1;
+  min-width: 0;
 }
 
 .name {
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
+  color: $color-text;
   margin: 0 0 $space-xs;
 }
 
 .meta {
   font-size: $font-size-xs;
-  opacity: 0.95;
-  margin-bottom: $space-xs;
+  color: $color-text;
+  margin: 0 0 $space-xs;
 }
 
 .orders {
   font-size: $font-size-xs;
-  opacity: 0.95;
-  margin-bottom: $space-sm;
+  color: $color-text;
+  margin: 0;
 }
 
-.ratingRow {
+.infoRight {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: $space-sm;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
 }
 
 .stars {
   display: flex;
   align-items: center;
   gap: 2px;
-  color: #fbbf24;
 }
 
-.ratingNum {
-  margin-left: 4px;
-  font-size: $font-size-xs;
-  color: $color-white;
-  opacity: 0.95;
+.starFilled {
+  color: #eab308;
+}
+
+.starEmpty {
+  color: #d1d5db;
 }
 
 .reviews {
   font-size: $font-size-xs;
-  opacity: 0.95;
+  color: $color-text;
 }
 
 .viewBtn {
-  margin-top: $space-sm;
+  width: 100%;
+  margin-top: $space-xs;
   padding: $space-xs $space-md;
   border: none;
-  background: rgba(255, 255, 255, 0.25);
+  background: $color-deep-red;
   color: $color-white;
   font-size: $font-size-xs;
   font-weight: $font-weight-semibold;
   cursor: pointer;
-  border-radius: 6px;
-  float: right;
+  border-radius: 8px;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: #6f0f2a;
+  }
+
+  @include mobile-first($tablet) {
+    width: auto;
+    margin-left: auto;
+    margin-top: $space-sm;
   }
 }

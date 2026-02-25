@@ -9,7 +9,7 @@ interface SelectedImagesProps {
 export default function SelectedImages({ images }: SelectedImagesProps) {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Selected images</h2>
+      <h2 className={styles.title}>Selected Images</h2>
       <div className={styles.grid}>
         {images.map((item) => (
           <div key={item.id} className={styles.card}>

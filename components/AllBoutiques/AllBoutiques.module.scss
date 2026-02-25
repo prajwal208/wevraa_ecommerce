@@ -69,9 +69,23 @@
   margin-bottom: $space-lg;
 }
 
+.barCompact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-md $space-lg;
+  background: $color-white;
+  border-radius: 10px;
+  margin-bottom: $space-lg;
+}
+
 .barText {
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
+
+  .barCompact & {
+    color: $color-text;
+  }
 }
 
 .nextBtn {
@@ -84,9 +98,17 @@
   cursor: pointer;
   border-radius: 8px;
   border: 1px solid $color-white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background: #6f0f2a;
+  }
+
+  .barCompact & {
+    border-color: $color-deep-red;
   }
 }
 

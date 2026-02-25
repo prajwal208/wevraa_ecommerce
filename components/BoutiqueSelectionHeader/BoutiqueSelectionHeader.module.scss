@@ -2,9 +2,21 @@
 @use "../../styles/mixins" as *;
 
 .header {
-  padding: $space-lg $space-md;
   background: $color-white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.trigger {
+  width: 100%;
+  padding: $space-lg $space-md;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
 }
 
 .inner {
@@ -79,22 +91,20 @@
   margin: 0;
 }
 
-.chevronBtn {
+.chevron {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  background: transparent;
-  color: $color-text;
-  cursor: pointer;
-  border-radius: 50%;
+  color: $color-text-muted;
+  transition: transform 0.2s ease;
+}
 
-  &:hover {
-    background: $color-light-pink;
-  }
+.dropdown {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: $color-white;
 }
 
 @include mobile-first($desktop) {

@@ -258,9 +258,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $space-md;
+  align-items: stretch;
 }
 
 .cancelBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   padding: $space-md $space-lg;
   border: none;
   background: #4b5563;
@@ -268,7 +273,9 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
 
   &:hover {
     background: #374151;
@@ -276,6 +283,7 @@
 }
 
 .sendBtn {
+  width: 100%;
   padding: $space-md $space-lg;
   border: none;
   background: #2563eb;
@@ -283,7 +291,8 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
 
   &:hover {
     background: #1d4ed8;

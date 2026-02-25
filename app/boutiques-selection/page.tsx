@@ -5,7 +5,7 @@ import BottomNav from "@/components/BottomNav";
 import { boutiqueSelectionList } from "@/data/dummy";
 import styles from "./page.module.scss";
 
-const selectedNames = "Star Boutique, Ap Designers, GGRFas.....";
+const selectedNames = "Star Boutique, Ap Designers, GGRFas......";
 
 export default function BoutiquesSelectionPage() {
   return (
@@ -17,10 +17,12 @@ export default function BoutiquesSelectionPage() {
           </svg>
         </Link>
       </header>
-      <BoutiqueSelectionHeader count={5} names={selectedNames} />
-      <main className="main-with-bottom-nav">
-        <BoutiqueSelectionList items={boutiqueSelectionList} />
-      </main>
+      <section className={styles.selectionSection}>
+        <BoutiqueSelectionHeader count={5} names={selectedNames}>
+          <BoutiqueSelectionList items={boutiqueSelectionList} />
+        </BoutiqueSelectionHeader>
+      </section>
+      <main className="main-with-bottom-nav" />
       <BottomNav />
     </>
   );

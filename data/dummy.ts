@@ -476,6 +476,16 @@ export const boutiques: Boutique[] = [
     image: "/images/product-5.svg",
     selected: true,
   },
+  {
+    id: "4",
+    name: "Star Boutique",
+    ordersCompleted: 200,
+    holdingOrders: 5,
+    rating: 4.5,
+    reviewCount: 1200,
+    image: "/images/product-1.svg",
+    selected: true,
+  },
 ];
 
 // Orders
@@ -571,8 +581,8 @@ export const billOrders: BillOrderItem[] = [
 
 // Boutique selection (for order quote)
 export const boutiqueSelectionList = [
-  { id: "1", name: "Star Boutique", iconColor: "gray" },
-  { id: "2", name: "Ap Designer Boutique", iconColor: "lightgray" },
+  { id: "1", name: "Star Boutique", iconColor: "orange" },
+  { id: "2", name: "Ap Designer Boutique", iconColor: "orange" },
   { id: "3", name: "Fashion Spray", iconColor: "yellow" },
   { id: "4", name: "Lite Fashions", iconColor: "purple" },
   { id: "5", name: "San Designers", iconColor: "darkpurple" },

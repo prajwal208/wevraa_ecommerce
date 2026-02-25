@@ -47,7 +47,7 @@ export default function ProfileSection({ profile }: ProfileSectionProps) {
             </svg>
           </span>
         </Link>
-        <Link href="/boutiques-selection" className={styles.linkRow}>
+        <Link href="/select-boutiques" className={styles.linkRow}>
           <span>Boutiques / Order Quote</span>
           <span className={styles.linkArrow} aria-hidden>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
