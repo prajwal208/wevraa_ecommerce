@@ -1,0 +1,130 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.wrap {
+  padding: $space-md;
+  padding-bottom: $space-2xl;
+  background: #f5f5f5;
+  min-height: 60vh;
+}
+
+.tabs {
+  display: flex;
+  gap: $space-sm;
+  overflow-x: auto;
+  padding: $space-sm 0 $space-md;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  flex-shrink: 0;
+  padding: $space-sm $space-md;
+  border: none;
+  border-radius: 20px;
+  background: $color-deep-red;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background: darken($color-deep-red, 5%);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-md;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cardImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #e8e8e8;
+  overflow: hidden;
+}
+
+.cardImageContent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uploadPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+  gap: $space-sm;
+}
+
+.uploadIcon {
+  width: 40px;
+  height: 40px;
+  color: $color-deep-red;
+}
+
+.removeBtn {
+  position: absolute;
+  top: $space-sm;
+  right: $space-sm;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: $color-text;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    background: $color-white;
+  }
+}
+
+.cardLabel {
+  padding: $space-sm $space-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  text-align: center;
+}
+
+.cardLabelPrimary {
+  background: $color-deep-red;
+  color: $color-white;
+}
+
+.cardLabelSecondary {
+  background: #e8e8e8;
+  color: $color-text;
+}
+
+.placeholderCard {
+  .cardImage {
+    background: #d0d0d0;
+  }
+}
